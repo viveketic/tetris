@@ -1,7 +1,7 @@
 # Tetris
 Classic tetris game in C++ using SDL2.0.
 
-# Build
+## Build
 Make sure you have CMake to build the project. If not, install by
 
 ```
