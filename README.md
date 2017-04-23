@@ -11,8 +11,6 @@ cmake -D CMAKE_BUILD_TYPE=Debug ../
 make
 ```
 ## Run
-
-Find binaries in `bin` directory.
 ```
 ./tetris 
 ```
