@@ -4,6 +4,7 @@ Painter.cpp
 Tetris.cpp
 Tetromino.cpp
 TetrisPainter.cpp
+Music.cpp
 )
 
 add_library(TetrisLib STATIC ${TetrisLib_SRCS})

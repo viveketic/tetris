@@ -10,7 +10,8 @@ namespace Tetris
          _renderer(NULL),
          _tetromino(Tetromino::Shape::I,Color(0,0,0)),
          _matrix(Matrix()),
-         _score(0)
+         _score(0),
+         _music()
     {}
 
     void Tetris::start()
@@ -38,6 +39,8 @@ namespace Tetris
         std::string buttonText = "New Game";
         TetrisPainter tetrisPainter(_renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
         tetrisPainter.drawPanel(0,_tetromino);
+
+        _music.init();
     }
 
     void Tetris::run()
@@ -57,23 +60,35 @@ namespace Tetris
             if(_matrix.hasTetrominoHitBottom(_tetromino,_tetrominoPosition))
             {
                 _matrix.addTetrominoToHeap(_tetromino,_tetrominoPosition);
-                _score += _matrix.deletePackedRows();
+                unsigned noOfRowsDeleted = _matrix.deletePackedRows();
+                _score += noOfRowsDeleted;
                 _tetrominoPosition = Position(1,4);
                 _tetromino = nextTetromino;
                 addTetromino();
                 nextTetromino = generateRandomTertomino();
                 tetrisPainter.drawPanel(_score,nextTetromino);
+                _music.playSound(Sound::FORCE_HIT);
+                if(noOfRowsDeleted > 0)
+                {
+                    _music.playSound(Sound::LINE_REMOVAL);
+                }
             }
 
             if(_matrix.hasTetrominoHitHeap(_tetromino,_tetrominoPosition))
             {
                 _matrix.addTetrominoToHeap(_tetromino,_tetrominoPosition);
-                _score += _matrix.deletePackedRows();
+                unsigned noOfRowsDeleted = _matrix.deletePackedRows();
+                _score += noOfRowsDeleted;
                 _tetrominoPosition = Position(1,4);
                 _tetromino = nextTetromino;
                 addTetromino();
                 nextTetromino = generateRandomTertomino();
                 tetrisPainter.drawPanel(_score,nextTetromino);
+                _music.playSound(Sound::FORCE_HIT);
+                if(noOfRowsDeleted > 0)
+                {
+                    _music.playSound(Sound::LINE_REMOVAL);
+                }
             }
 //            std::cout << "SCORE: " << _score << std::endl;
 /*
@@ -91,6 +106,7 @@ namespace Tetris
                         quit = true; break;
                     case SDLK_UP:
                         moveTetromino(Tetromino::Action::ROTATE);
+                        _music.playSound(Sound::ROTATE);
                         break;
                     case SDLK_LEFT:
                         moveTetromino(Tetromino::Action::MOVE_LEFT);
@@ -115,7 +131,9 @@ namespace Tetris
     void Tetris::exit()
     {
         SDL_DestroyWindow(_window);
-        SDL_Quit();        
+        _music.exit();
+        TTF_Quit();
+        SDL_Quit();  
     }
 
     Tetromino Tetris::generateRandomTertomino() const

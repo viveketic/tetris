@@ -7,4 +7,5 @@ target_link_libraries(tetris
 TetrisLib
 ${SDL2_LIBRARY}
 ${SDL2_TTF_LIBRARIES}
+${SDL2_MIXER_LIBRARY}
 )

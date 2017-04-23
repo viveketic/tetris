@@ -8,7 +8,8 @@
 #include "Matrix.h"
 #include "Tetromino.h"
 #include "Common.h"
-
+#include <iostream>
+#include "Music.h"
 
 #define SCREEN_WIDTH 400
 #define SCREEN_HEIGHT 400
@@ -29,7 +30,6 @@ namespace Tetris
         void addTetromino();
         void moveTetromino(Tetromino::Action action_);
 
-
         SDL_Window*                           _window;
         SDL_Renderer*                         _renderer;
         Position                              _tetrominoPosition;
@@ -38,7 +38,9 @@ namespace Tetris
         Tetromino                             _tetromino;
         Matrix                                _matrix;
         unsigned                              _score;
+        Music                                 _music;
     };
+
 }
 
 #endif

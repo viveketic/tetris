@@ -2,7 +2,7 @@
 Classic tetris game in C++ using SDL2.0.
 
 ## Build
-Make sure you have cmake and True Type Font (TTF) installed.  
+Make sure you have cmake and True Type Font (TTF) and SDL2-mixer installed.  
 
 ```
 mkdir build
@@ -16,3 +16,5 @@ Find binaries in `bin` directory.
 ```
 ./tetris 
 ```
+## References
+* [Sound Effects](https://github.com/nickarora/tetris/tree/master/sounds)
