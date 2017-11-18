@@ -143,7 +143,20 @@ namespace Tetris
         unsigned green = rand()%255;
         unsigned blue = rand()%255;
 
-        return Tetromino(static_cast<Tetromino::Shape>(tetrominoShapeIndex),Color(red,green,blue));
+        std::array<std::tuple<unsigned, unsigned, unsigned>, 4> colorTable =
+        {
+            std::make_tuple(0,52,89),
+            std::make_tuple(2,128,144),
+            std::make_tuple(2,195,154),
+            std::make_tuple(252,227,138)
+        };
+
+        unsigned colorTableIndex = rand()%colorTable.size();
+
+        return Tetromino(static_cast<Tetromino::Shape>(tetrominoShapeIndex),
+                         Color(std::get<0>(colorTable[colorTableIndex]),
+                               std::get<1>(colorTable[colorTableIndex]),
+                               std::get<2>(colorTable[colorTableIndex])));
     }
     
     void Tetris::addTetromino()
