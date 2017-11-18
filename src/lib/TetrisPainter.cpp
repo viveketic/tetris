@@ -36,8 +36,8 @@ namespace Tetris
     void TetrisPainter::drawPanel(unsigned score_, const Tetromino& nextTetromino_) const
     {
         double panelWidth = 200;
-        Color borderColor(153,129,0);
-        Color fillColor(255, 230, 230);
+        Color borderColor(255,255,255);
+        Color fillColor(160, 219, 219);
 
         drawRectangle(0, 0,
                       panelWidth, _screenHeight,
@@ -95,7 +95,7 @@ namespace Tetris
 
         double squareSize = 20;
         Color borderColor(250, 248, 239);
-        Color backgroundColor(250, 248, 239);
+        Color backgroundColor(213, 247, 255);
         if(square_._isSet)
         {
             drawRectangle(squareCordinate._x, 
@@ -118,7 +118,7 @@ namespace Tetris
     {
         double matrixWidth = 200;
         Color borderColor(22, 0, 11);
-        Color fillColor(255, 0, 255);
+        Color fillColor(213, 247, 255);
         drawRectangle(200, 0,
                       matrixWidth, _screenHeight,
                       2, 

@@ -33,7 +33,7 @@ namespace Tetris
         _renderer = 
             SDL_CreateRenderer(_window, 0, SDL_RENDERER_ACCELERATED);
  
-        SDL_SetRenderDrawColor(_renderer, 250, 248, 239, 255);
+        SDL_SetRenderDrawColor(_renderer, 213, 247, 255, 255);
         SDL_RenderClear(_renderer);
 
         std::string buttonText = "New Game";
