@@ -59,7 +59,7 @@ namespace Tetris
 
     void Matrix::deleteTetrmino(const Tetromino& tetromino_, const Position& position_)
     {
-        Color backgroundColor(250, 248, 239);
+        Color backgroundColor(213, 247, 255);
         RelativeSquarePositionArray relativeSquarePositionArray = 
             tetromino_.getRelativeSquarePositionArray();
 

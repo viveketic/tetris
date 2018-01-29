@@ -33,7 +33,7 @@ namespace Tetris
         _renderer = 
             SDL_CreateRenderer(_window, 0, SDL_RENDERER_ACCELERATED);
  
-        SDL_SetRenderDrawColor(_renderer, 213, 247, 255, 255);
+        SDL_SetRenderDrawColor(_renderer, 255, 250, 235, 255);
         SDL_RenderClear(_renderer);
 
         std::string buttonText = "New Game";
@@ -145,9 +145,9 @@ namespace Tetris
 
         std::array<std::tuple<unsigned, unsigned, unsigned>, 4> colorTable =
         {
-            std::make_tuple(0,52,89),
-            std::make_tuple(2,128,144),
-            std::make_tuple(2,195,154),
+            std::make_tuple(255,105,113),
+            std::make_tuple(108,203,155),
+            std::make_tuple(201,221,88),
             std::make_tuple(252,227,138)
         };
 
