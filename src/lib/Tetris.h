@@ -2,7 +2,7 @@
 #define TETRIS_GAME_H
 
 #include <cstdlib>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 
 #include "Matrix.h"

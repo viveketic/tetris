@@ -1,7 +1,7 @@
 #ifndef TETRIS_PAINTER_H
 #define TETRIS_PAINTER_H
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "Common.h"
 
 namespace Tetris

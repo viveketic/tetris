@@ -11,7 +11,6 @@ namespace Tetris
                                 const Color& fillColor_) const
     {
         SDL_Rect rectangle;
-
         rectangle.x = x_;
         rectangle.y = y_;
         rectangle.w = width_;

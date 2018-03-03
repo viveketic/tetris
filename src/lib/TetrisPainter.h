@@ -6,7 +6,7 @@
 #include "Painter.h"
 #include "Matrix.h"
 #include "Tetromino.h"
-#include <SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
 
 namespace Tetris
 {
