@@ -1,7 +1,7 @@
 set(TetrisLib_SRCS 
 Matrix.cpp
 Painter.cpp
-Tetris.cpp
+Game.cpp
 Tetromino.cpp
 TetrisPainter.cpp
 Music.cpp
