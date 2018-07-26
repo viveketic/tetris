@@ -1,10 +1,10 @@
-#include "Game.h"
+#include "Tetris.h"
 
 int main()
 {
-    Tetris::Game *game = new Tetris::Game();
+    Tetris::Tetris tetris;
 
-    game->start();
+    tetris.start();
  
     return 0;
 }
